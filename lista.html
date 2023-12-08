@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Pendientes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" type="text/javascript" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<body>
+    <div class="list roundBorder"> 
+        <div class="date">
+            <div class="dateRight">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+        <form onsubmit="addNewTask(event)"> <!--Autocomplete off es para que no se vea el historial en el buscador -->
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder" id="taskInput" value="">
+            <button type="submit" class="addTaskButton" onclick="addTasks(event)">+</button>
+            <button type="button" class="orderButton roundBorder" onclick="OrderTask()">Ordenar</button>
+        </form>
+        <div class="list-tasks">
+            <ul id="lista">
+            </ul>
+        </div>
+        <button class="remove-all" onclick="deleteAll()">Remove all</button>
+        <div id="tasksContainer"></div>
+    </div>
+</body>
+<footer> <p>Derechos reservados | Hecho por GenesisHipogrifo &copy</p></footer>
+</html>
